@@ -1,0 +1,26 @@
+#app{
+  position:fixed;
+}
+.pizza {
+  --rotation-deg: 0deg;
+
+  border: 3px solid black;
+  width: 600px;
+  height: 600px;
+  clip-path: circle(50% at 50% 50%);
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  transform: rotate(var(--rotation-deg));
+  transition: transform 1s ease-in-out;
+}
+.slice {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  transform-origin: 0% 100%;
+  outline: 1px solid blue;
+}
