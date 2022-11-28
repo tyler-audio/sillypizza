@@ -2,7 +2,22 @@ import { useState, useEffect } from 'react';
 import Slice from './Slice';
 
 export default ({ gen }) => {
-  const [radius, setRadius] = useState(0);
+  const [rotation, setRotation] = useState(0);
+
+  const colors = {
+    2: '#D8DBE2',
+    3: '#A9BCD0',
+    4: '#58A4B0',
+    5: '#DAA49A'
+  }
+
+  const diameter = gen * 20;
+  const style = {
+    zIndex: -gen,
+    width: `${diameter}%`,
+    height: `${diameter}%`,
+    backgroundColor: colors[gen],
+  }
 
   const numSlices = 2**gen;
   const division = 360 / numSlices; // for all slices
@@ -27,13 +42,14 @@ export default ({ gen }) => {
   const handleRotate = (e, deg) => {
     e.preventDefault();
 
-    const pizza = document.querySelector('.pizza')
+    setRotation(deg);
+    document.querySelector('.pizza-box')
       .style
       .setProperty('--rotation-deg', `${deg}deg`);
   }
 
   return (
-    <div className="pizza">
+    <div className="pizza" style={style}>
       {slices.map((s, i) => {
         return (
           <Slice
