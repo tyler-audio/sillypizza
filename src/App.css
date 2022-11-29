@@ -3,29 +3,24 @@
 }
 .pizza-box {
   --rotation-deg: 0deg;
-  border: 3px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 800px;
   height: 800px;
+  transform: rotate(var(--rotation-deg));
+  transition: transform 1s ease-in-out;  
+}
+.pizza-box, .pizza {
   clip-path: circle(50% at 50% 50%);
+  border: 3px solid #373F51;
   border-radius: 50%;
   overflow: hidden;
-  transform: rotate(var(--rotation-deg));
-  transition: transform 1s ease-in-out;
-  
 }
-.pizza {
-  width: 80%;
-  height: 80%;
+.pizza, .slice, .name {
   position: absolute;
-  border: 3px solid #373F51;
-  clip-path: circle(50% at 50% 50%);
-  border-radius: 50%;
 }
 .slice {
-  position: absolute;
   top: 0;
   right: 0;
   width: 50%;
@@ -39,7 +34,6 @@
   transform: rotate(0deg) skewY(45deg);
 }
 .name {
-  position: absolute;
   left: 25%;
   bottom: 30%;
 }
