@@ -13,6 +13,7 @@ function App() {
     <div id="App">
       <div className="pizza-box">
         {gens.map((g) => {
+          // first two generations do not render properly: require style change
           if (g > 1) return <Pizza gen={g}/>
         })}
       </div>

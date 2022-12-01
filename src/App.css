@@ -9,7 +9,7 @@
   width: 800px;
   height: 800px;
   transform: rotate(var(--rotation-deg));
-  transition: transform 1s ease-in-out;  
+  transition: transform 0.5s ease-in-out;  
 }
 .pizza-box, .pizza {
   clip-path: circle(50% at 50% 50%);
